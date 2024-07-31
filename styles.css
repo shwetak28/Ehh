@@ -1,0 +1,105 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffe6e6;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    border: 2px solid #ff9999;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #fff0f5;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 2em;
+    color: #ff6666;
+}
+
+button {
+    font-size: 1.5em;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff99cc;
+    color: white;
+    transition: transform 0.2s;
+    position: relative;
+    z-index: 1;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+#no {
+    position: relative;
+}
+
+@keyframes fall {
+    0% {
+        top: -10%;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: pink;
+    transform: rotate(-45deg);
+    animation: fall linear infinite;
+}
+
+.heart:before,
+.heart:after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: pink;
+    border-radius: 50%;
+}
+
+.heart:before {
+    top: -15px;
+    left: 0;
+}
+
+.heart:after {
+    left: 15px;
+    top: 0;
+}
+
+.heart.medium {
+    width: 40px;
+    height: 40px;
+}
+
+.heart.large {
+    width: 50px;
+    height: 50px;
+}
+
+.heart:nth-child(odd) {
+    animation-duration: 10s;
+}
+
+.heart:nth-child(even) {
+    animation-duration: 15s;
+}
